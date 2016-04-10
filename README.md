@@ -27,7 +27,7 @@ The general configuration for a specific container is as follows:
     containerName: {
       Image: {String}                    // The repository and name of the image to pull from the dockerhub 
       Cmd: [String]                      // The command which will override the default one
-      Name: {String}                     // The name you want the new container to have
+      name: {String}                     // The name you want the new container to have
       Options: {
         tasks: {
           async: true
@@ -56,9 +56,9 @@ purpose for instance):
         }
       };
     }
-    
+
     ...
-    
+
     container: {
       options: {
         machine: {
@@ -72,7 +72,7 @@ purpose for instance):
       },
       redis: {
         Image: 'redis:latest',
-        Name: 'redis',
+        name: 'redis',
         Options: {
           tasks: {
             async: true
@@ -84,7 +84,7 @@ purpose for instance):
       mongodb: {
         Image: 'mongo:latest',
         Cmd: 'mongod --replSet replication --smallfiles --oplogSize 128'.split(' '),
-        Name: 'mongodb',
+        name: 'mongodb',
         Options: {
           tasks: {
             async: true
@@ -96,7 +96,7 @@ purpose for instance):
       elasticsearch: {
         Image: 'elasticsearch:latest',
         Cmd: ['elasticsearch', '-Des.discovery.zen.ping.multicast.enabled=false'],
-        Name: 'elasticsearch',
+        name: 'elasticsearch',
         Options: {
           tasks: {
             async: true
