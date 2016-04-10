@@ -24,7 +24,6 @@ module.exports = function(grunt) {
 
     if (command === 'remove') {
       container = docker.getContainer(target);
-      container = containers[target];
       if (!container) {
         grunt.fatal('No running container for target: ' + target);
       }
